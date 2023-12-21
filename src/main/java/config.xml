@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- If We Use <Property> to set values this means we are using setter injection -->
+	<bean class="com.extramarks.Student" name="student1">
+
+		<property name="studentId">
+			<value>21</value>
+		</property>
+
+		<property name="studentName">
+			<value>Harshit Maurya</value>
+		</property>
+
+		<property name="studentAddress">
+			<value>Lucknow</value>
+		</property>
+	</bean>
+
+	<!-- we can use value tag as attribute for better code reusebilty -->
+	<bean class="com.extramarks.Student" name="student2">
+		<property name="studentId" value="31" />
+
+		<property name="studentName" value="Anand Kumar" />
+
+		<property name="studentAddress" value="Ranchi" />
+	</bean>
+
+
+	<!-- we can also use p:schema as we have used it as a dependency in our 
+		cofig file on top -->
+	<bean class="com.extramarks.Student" name="student3"
+		p:studentId="51" p:studentName="Vedant Sharma"
+		p:studentAddress="Delhi" />
+
+
+
+</beans>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+	<!-- we can use value tag as attribute for better code reusebilty -->
+	<bean class="com.springcore.collections.Employee" name="emp">
+		<property name="name" value="Harshit Maurya" />
+
+		<property name="phones">
+			<list>
+				<value>9876543</value>
+				<value>9876541</value>
+				<value>9876542</value>
+				<value>9876546</value>
+			</list>
+		</property>
+
+		<property name="addresses">
+			<set>
+				<value>Delhi</value>
+				<value>Gurugram</value>
+				<value>Noida</value>
+				<value>Punjab</value>
+			</set>
+		</property>
+
+		<property name="courses">
+
+			<map>
+				<entry key="Maths" value="3 Month" />
+				<entry key="Science" value="2 Month" />
+				<entry key="Hindi" value="5 Month" />
+			</map>
+		</property>
+	</bean>
+
+
+	<!-- we can also use p:schema as we have used it as a dependency in our 
+		cofig file on top -->
+<!-- 	<bean class="com.springcore.collections" name="student3"
+		p:studentId="51" p:studentName="Vedant Sharma"
+		p:studentAddress="Delhi" /> -->
+
+</beans>

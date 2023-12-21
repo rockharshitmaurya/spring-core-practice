@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+                           
+            
+          <bean class="com.springcore.constructor_injection.Person" name="person">
+          	<constructor-arg value="Harshit"/>
+          	<constructor-arg value="10" type="int"/>
+          </bean>
+</beans>
+
+
+<!-- In the context of Spring XML configuration (config.xml), the <constructor-arg> element is 
+used to specify constructor arguments when defining beans. Within this element, you can use 
+the type and index attributes to indicate which constructor parameter should be supplied with a specific bean.
+
+Type Attribute: It specifies the type of the constructor parameter to resolve ambiguity when 
+multiple beans of the same type are available. For example:
+
+
+Copy code
+<bean id="exampleBean" class="com.example.ExampleClass">
+    <constructor-arg type="int">
+        <ref bean="dependencyAInstance"/>
+    </constructor-arg>
+</bean>
+Index Attribute: This attribute identifies the index of the constructor parameter to
+ be injected. It's less common and less explicit compared to using types. For example:
+
+xml
+Copy code
+<bean id="exampleBean" class="com.example.ExampleClass">
+    <constructor-arg index="0">
+        <ref bean="dependencyAInstance"/>
+    </constructor-arg>
+</bean>
+
+Using type or index attributes within the <constructor-arg> element helps in specifying which 
+constructor parameter of the bean class should be injected with a particular bean instance, 
+resolving ambiguity when multiple constructors or parameters are present. However, using the 
+type attribute is generally more readable and recommended for clarity in XML configuration files. -->
