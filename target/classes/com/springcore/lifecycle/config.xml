@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- Certainly! In Spring's lifecycle, the `init-method` and `destroy-method` attributes play essential 
+roles in managing bean initialization and destruction.
+
+In your code snippet, the `init-method="init"` attribute within the bean configuration indicates 
+that when the bean instance is created by the Spring container, it should invoke a method named `init()` 
+defined within your `BeanClass`. This method can be used for any custom initialization logic required for your bean.
+
+Similarly, the `destroy-method="destroy"` attribute specifies that when the Spring container is shutting 
+down or when the bean is being removed from the container, it will call the `destroy()` method defined in `BeanClass`. 
+This method can contain cleanup code or any necessary actions to be performed before the bean is destroyed.
+
+Remember, for these methods to be called at the appropriate times, your `BeanClass` needs to define the `init()`
+and `destroy()` methods according to your desired logic.
+
+If you have any specific questions about implementing these methods or about Spring's bean lifecycle in general,
+feel free to ask! -->
+
+	<bean class="com.springcore.lifecycle.BeanClass"
+		name="BeanClassOne" init-method="init" destroy-method="destroy">
+		<property name="number" value="15" />
+
+	</bean>
+
+</beans>
