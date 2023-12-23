@@ -10,6 +10,7 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd">
 	<context:annotation-config />
+	
 	<bean class="com.springcore.auto.wire.annotation.Address"
 		name="add">
 		<property name="streat" value="Lucknow" />
@@ -22,16 +23,8 @@
 		<property name="city" value="Udhauli" />
 	</bean>
 
-	<!-- in this autowire-type name of variable in the class and in config file 
-		must be same -->
-	<!-- <bean class="com.springcore.auto.wire.Emp" name="emp1" autowire="byName"/> -->
-
-
-	<!-- in this autowire-type name of variable in the class and in config file 
-		must not be same -->
+	
 	<bean class="com.springcore.auto.wire.annotation.Emp" name="emp1" />
 
-
-	<!-- <bean class="com.springcore.auto.wire.Emp" name="emp1" autowire="constructor"/> -->
 
 </beans>
